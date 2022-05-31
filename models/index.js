@@ -3,7 +3,7 @@ const Posts = require("./Posts");
 const Comments = require("./Comments");
 
 Posts.belongsTo(Users, {
-  foreignKey: "id",
+  foreignKey: "userId",
 });
 
 Users.hasMany(Posts, {

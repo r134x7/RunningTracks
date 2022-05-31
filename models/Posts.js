@@ -12,10 +12,6 @@ Post.init(
       autoIncrement: true,
       unique: true,
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      foreignKey: true,
-    },
     distance: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
@@ -33,6 +29,13 @@ Post.init(
     body: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
     },
   },
   {

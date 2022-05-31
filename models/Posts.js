@@ -21,6 +21,7 @@ Post.init(
     },
     time: {
       type: DataTypes.INTEGER,
+      allowNull: false,
     },
     runName: {
       type: DataTypes.STRING,

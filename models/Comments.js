@@ -11,10 +11,6 @@ Comments.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    postId: {
-      type: DataTypes.INTEGER,
-      foreignKey: true,
-    },
     commentBody: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -22,6 +18,20 @@ Comments.init(
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    postId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "post",
+        key: "id",
+      },
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
     },
   },
   {
@@ -32,5 +42,5 @@ Comments.init(
     modelName: "comments",
   }
 );
-
-module.exports = Comments;
+  
+  module.exports = Comments;

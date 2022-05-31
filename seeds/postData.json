@@ -26,6 +26,13 @@
     "time": 5000,
     "runName": "short run",
     "body":"too tired!"
+  },
+  {
+    "userId": 3,
+    "distance": 6.20,
+    "time": 50000,
+    "runName": "long run",
+    "body":"tired!"
   }
  
 ]

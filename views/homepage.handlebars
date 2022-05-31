@@ -2,13 +2,15 @@
 <div class="box">
   <div class="head">
     <h4>
-      <a href="/post/{{post.id}}">{{post.title}}</a>
+      <a href="/post/{{post.userId}}">{{post.runName}}</a>
     </h2>
-    <p>Posted by {{post.user.name}} on {{format_date post.date_created}}</p>
+    <p>Posted by {{post.user.userName}} </p>
   </div>
   <div class="content">
       <p>
-      {{post.content}}
+      {{post.body}}
+       {{post.time}}
+        {{post.distance}}
     </p>
   </div>
 </div>

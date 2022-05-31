@@ -1,0 +1,31 @@
+[
+  {
+    "userId": 1,
+    "distance": 1.20,
+    "time": 50000,
+    "runName": "morning run",
+    "body":"really nice run today"
+  },
+  {
+    "userId": 2,
+    "distance": 4.20,
+    "time": 80000,
+    "runName": "evening run",
+    "body":"cold out!"
+  },
+  {
+    "userId": 1,
+    "distance": 2.20,
+    "time": 5000,
+    "runName": "afernoon run",
+    "body":"really nice weather today"
+  },
+  {
+    "userId": 2,
+    "distance": 1.20,
+    "time": 5000,
+    "runName": "short run",
+    "body":"too tired!"
+  }
+ 
+]

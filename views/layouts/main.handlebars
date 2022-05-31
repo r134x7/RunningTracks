@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Run Tracker</title>
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <header class="display-flex justify-space-between align-center p-2">
+    <h1>
+      Run Tracker
+    </h1>
+     <nav>
+    <h3><a href="/">Home</a></h3>
+   
+    {{#if loggedIn}}
+    <h2><button id="logout" class="">Logout</button></h2>
+    {{else}}
+   
+    <h3><a href="/login">Login</a></h3>
+    {{/if}}
+  </nav>
+  </header>
+  <main class="container container-fluid mt-5">
+    {{{ body }}}
+  </main>
+  <footer>
+      
+  </footer>
+</body>
+
+</html>

@@ -27,9 +27,34 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/Posts/:id", async (req, res) => {
+router.get("/post/:id", async (req, res) => {
   try {
-    const PostsData = await Posts.findByPk(req.params.id, {
+    const postData = await Posts.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["userName"],
+        },
+        {
+          model: Comments,
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+    console.log(post);
+    res.render("post", {
+      post,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/post/edit/:id", withAuth, async (req, res) => {
+  try {
+    const postData = await Posts.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -38,10 +63,10 @@ router.get("/Posts/:id", async (req, res) => {
       ],
     });
 
-    const Posts = PostsData.get({ plain: true });
+    const post = postData.get({ plain: true });
 
-    res.render("Posts", {
-      ...Posts,
+    res.render("editpost", {
+      post,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -67,6 +92,35 @@ router.get("/profile", withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+router.get("/newpost", withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Posts }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render("newpost", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/signup", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect("/profile");
+    return;
+  }
+
+  res.render("signup");
 });
 
 router.get("/login", (req, res) => {

@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2>Create New Post</h2>
+
+    <form class="form post-form">
+      <div class="form-group">
+        <label>Run Name:</label>
+        <input class="form-input" type="text" id="post-runName" value="{{post.runName}}" />
+      </div>
+      <div class="form-group">
+        <label>Content:</label>
+        <input class="form-input" type="text" id="post-body" value="{{post.body}}" />
+      </div>
+      <div class="form-group">
+        <label>Time:</label>
+        <input class="form-input" type="text" id="post-time" value="{{post.time}}" />
+      </div>
+      <div class="form-group">
+        <label>Distance:</label>
+        <input class="form-input" type="text" id="post-distance" value="{{post.distance}}" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="./js/newpost.js"></script>

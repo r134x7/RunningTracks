@@ -1,12 +1,16 @@
+<div>
+  <canvas id="distanceChart"></canvas>
+</div>
+
 {{#each posts as |post| }}
-<div class="box">
+<div class="box{{post.id}}" data-id="{{post.id}}">
   <div class="head">
     <h4>
       <a href="/post/{{post.id}}">{{post.runName}}</a>
     </h2>
-    <p>Posted by {{post.user.userName}} </p>
+    <p class="user{{post.id}}" data-id="{{post.user.userName}}">Posted by {{post.user.userName}} </p>
   </div>
-  <div class="content">
+  <div class="content{{post.id}}" data-id="{{post.distance}}">
       <p>
       {{post.body}}
        {{post.time}}
@@ -15,3 +19,6 @@
   </div>
 </div>
 {{/each}}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./js/distancechart.js"></script>

@@ -3,8 +3,18 @@
   <div class="head">
     <h4>
       <a href="/post/edit/{{post.id}}">{{post.runName}}</a>
-    </h2>
-    <p> {{post.time}} {{post.distance}}</p>
+    </h4>
+ <p>
+      <div id="aboutRun">
+      <b>About</b>
+      </br>{{post.body}}</div>
+
+       <div id="time">{{millisToMinutesAndSeconds post.time}}min </div> 
+       <div id="distance"> <b>{{post.distance}}km</b> </div>
+
+
+
+   
   </div>
 </div>
 {{/each}}

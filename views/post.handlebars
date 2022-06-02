@@ -1,0 +1,45 @@
+<div class="box">
+  <div class="head">
+    <h4>
+      <p>{{post.runName}}</p>
+    </h2>
+    <p>Posted by {{post.user.userName}} </p>
+  </div>
+  <div class="content">
+      <p>
+      {{post.body}}
+       {{post.time}}
+        {{post.distance}}
+    </p>
+  </div>
+</div>
+
+
+{{#each post.comments as |comment|}}
+<div class="box">
+  <div class="head">
+  </div>
+  <div class="content">
+    <p> {{comment.commentBody}} </p>
+    <p> Name:{{comment.commentName}} </p>
+  </div>
+</div>
+{{/each}}
+
+<div class="box">
+  <div class="col-md-6">
+    <h2>Create a comment</h2>
+
+    <form class="form post-form" data-id="{{post.id}}">
+      <div class="form-group">
+        <label>Content:</label>
+        <input class="form-input" type="text" id="post-content"/>
+      </div>
+      <div class="form-group">
+        <button class="btn" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../js/comment.js"></script>

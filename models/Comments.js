@@ -11,6 +11,10 @@ Comments.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    commentName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     commentBody: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -42,5 +46,5 @@ Comments.init(
     modelName: "comments",
   }
 );
-  
-  module.exports = Comments;
+
+module.exports = Comments;

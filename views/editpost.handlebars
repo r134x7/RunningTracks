@@ -1,0 +1,49 @@
+<div class="box">
+  <div class="head">
+    <h4>
+      <p>{{post.runName}}</p>
+    </h2>
+    <p>Posted by {{post.user.userName}} </p>
+  </div>
+  <div class="content">
+      <p>
+      {{post.body}}
+       {{post.time}}
+        {{post.distance}}
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <h2>Edit Post</h2>
+
+    <form class="form post-form" data-id="{{post.id}}">
+      <div class="form-group">
+        <label>Run Name:</label>
+        <input class="form-input" type="text" id="post-runName" value="{{post.runName}}" />
+      </div>
+      <div class="form-group">
+        <label>Content:</label>
+        <input class="form-input" type="text" id="post-body" value="{{post.body}}" />
+      </div>
+      <div class="form-group">
+        <label>Time:</label>
+        <input class="form-input" type="text" id="post-time" value="{{post.time}}" />
+      </div>
+      <div class="form-group">
+        <label>Distance:</label>
+        <input class="form-input" type="text" id="post-distance" value="{{post.distance}}" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Edit Post</button>
+      </div>
+    </form>
+    <div class="test"></div>
+        <button class="delete-list" data-id="{{post.id}}">Delete Post</button>
+    </div>
+  </div>
+</div>
+
+<script src="../../js/editpost.js"></script>

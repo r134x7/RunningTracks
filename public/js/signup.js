@@ -5,6 +5,10 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
 
+  console.log(name);
+  console.log(email);
+  console.log(password);
+
   if (name && email && password) {
     const response = await fetch("/api/users", {
       method: "POST",
@@ -13,7 +17,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace("/profile");
     } else {
       alert(response.statusText);
     }

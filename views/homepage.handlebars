@@ -12,9 +12,12 @@
   </div>
   <div class="content{{post.id}}" data-id="{{post.distance}}">
       <p>
-      {{post.body}}
-       {{post.time}}
-        {{post.distance}}
+      <div id="aboutRun">
+      <b>About</b>
+      </br>{{post.body}}</div>
+
+       <div id="time">{{millisToMinutesAndSeconds post.time}}min </div> 
+       <div id="distance"> <b>{{post.distance}}km</b> </div>
     </p>
   </div>
 </div>

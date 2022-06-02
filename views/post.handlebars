@@ -6,11 +6,12 @@
     <p>Posted by {{post.user.userName}} </p>
   </div>
   <div class="content">
-      <p>
-      {{post.body}}
-       {{post.time}}
-        {{post.distance}}
-    </p>
+     <div id="aboutRun">
+      <b>About</b>
+      </br>{{post.body}}</div>
+
+       <div id="time">{{post.time}}min </div> 
+       <div id="distance"> <b>{{post.distance}}km</b> </div>
   </div>
 </div>
 

@@ -22,8 +22,11 @@
       <div id="aboutRun">
       <b>About</b>
       </br>{{post.body}}</div>
-       <div id="time{{post.id}}" data-id="{{post.time}}">{{millisToMinutesAndSeconds post.time}} seconds </div> 
-       <div id="distance{{post.id}}" data-id="{{post.distance}}"> <b>{{post.distance}} km</b></div>
+
+       <div id="time{{post.id}}" data-id="{{post.time}}">{{millisToMinutesAndSeconds post.time}}min </div> 
+       <div id="distance{{post.id}}" data-id="{{post.distance}}"> <b>{{post.distance}}km</b> </div>
+       <div id="minPerKm"> <b>{{minPerKm  post.time post.distance }}min/km</b> </div>
+       
   </div>
 </div>
 {{/each}}

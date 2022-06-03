@@ -7,8 +7,19 @@ const editFormHandler = async (event) => {
 
   const runName = document.querySelector("#post-runName").value.trim();
   const body = document.querySelector("#post-body").value.trim();
-  const time = document.querySelector("#post-time").value.trim();
   const distance = document.querySelector("#post-distance").value.trim();
+
+  const timeMin = document.querySelector("#post-min").value.trim();
+  const timeSec = document.querySelector("#post-sec").value.trim();
+
+  function timeToMs(timeMin, timeSec) {
+    const secToMs = timeSec * 1000;
+    const minToMs = timeMin * 60000;
+    console.log(secToMs, minToMs);
+    return secToMs + minToMs;
+  }
+
+  const time = timeToMs(timeMin, timeSec);
 
   if (runName && body && time && distance) {
     const response = await fetch(`/api/posts/${postId}`, {

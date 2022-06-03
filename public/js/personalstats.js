@@ -2,54 +2,85 @@ const postId = [];
 const distance = [];
 const time = [];
 const colour = [];
+const xyCoordinates = [];
+
+var totalDistance = 0;
+var totalTime = 0;
 
 for (let index = 1; index < 1000; index++) {
-
   const getPostId = document.querySelector(`.box${index}`);
 
   if (getPostId !== null) {
     postId.push(document.querySelector(`.box${index}`).getAttribute("data-id"));
 
-    const getDistance = distance.push(document.querySelector(`#distance${index}`).getAttribute("data-id"));
+    const getDistance = distance.push(
+      document.querySelector(`#distance${index}`).getAttribute("data-id")
+    );
 
-    const getTime = time.push(document.querySelector(`#time${index}`).getAttribute("data-id"));
+    const getTime = time.push(
+      document.querySelector(`#time${index}`).getAttribute("data-id")
+    );
 
     const getColour1 = Math.floor(Math.random() * 256);
     const getColour2 = Math.floor(Math.random() * 256);
     const getColour3 = Math.floor(Math.random() * 256);
 
-    colour.push(`rgba(${getColour1}, ${getColour2}, ${getColour3}, 0.8)`)
-
+    colour.push(`rgba(${getColour1}, ${getColour2}, ${getColour3}, 0.8)`);
   }
-
 }
 
-const xy = []
+if (distance.length !== 0) {
+  distance.forEach((element) => {
+    totalDistance = totalDistance + Number(element);
+  });
+
+  document.querySelector(
+    "#totaldistance"
+  ).textContent = `Total distance: ${totalDistance} km`;
+}
+
+if (time.length !== 0) {
+  time.forEach((element) => {
+    totalTime = totalTime + Number(element);
+  });
+
+  document.querySelector(
+    "#totaltime"
+  ).textContent = `Total time: ${totalTime} milleseconds`;
+}
+
+if (postId.length !== 0) {
+  [last] = postId.slice(-1); // source: https://stackoverflow.com/questions/60409137/how-to-find-last-element-of-an-array-without-modifying-source-array-in-vanilla-j
+
+  const lastRun = document.querySelector(`.box${last}`).getAttribute("date-id");
+
+  document.querySelector(
+    "#lastrun"
+  ).textContent = `Last run posted on: ${lastRun}`;
+}
 
 for (let index = 0; index < postId.length; index++) {
-
-  const test = { 
+  const test = {
     y: distance[index],
     x: time[index],
-  }
+  };
 
-  xy.push(test)
-  
+  xyCoordinates.push(test);
 }
 
 let distanceChart = document.querySelector("#personalChart").getContext("2d");
 
 let lineChart = new Chart(distanceChart, {
-  type:"scatter",
+  type: "scatter",
   data: {
-    // labels: userName, // x-axis labels
-    datasets: [{
-      label: 'Distance chart in km for x date',
-      data: xy, // y-axis labels
-      backgroundColor: colour,
-    borderWidth: 1,
-    borderColor: 'black',
-    }],
+    datasets: [
+      {
+        label: "Distance chart in km for x date",
+        data: xyCoordinates,
+        backgroundColor: colour,
+        borderWidth: 1,
+        borderColor: "black",
+      },
+    ],
   },
-})
-
+});

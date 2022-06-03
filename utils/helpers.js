@@ -5,13 +5,12 @@ module.exports = {
     return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   },
   minPerKm: (time, distance) => {
-    console.log(time, distance);
-    time = time / 60000;
-    let disTime = distance / time;
+    let minutes = time / 60000;
+    let minPerKm = minutes / distance;
+    let wholeMinPerKm = Math.floor(minPerKm);
+    let leftOverMin = minPerKm - wholeMinPerKm;
+    let seconds = Math.floor(leftOverMin * 60);
 
-    return disTime.toFixed(2);
-    /* Math.floor(distance / time) */
+    return wholeMinPerKm + ":" + seconds;
   },
 };
-
-/*  */

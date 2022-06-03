@@ -2,37 +2,65 @@
   {
     "userId": 1,
     "distance": 1.20,
-    "time": 50000,
+    "time": 400000,
     "runName": "morning run",
     "body":"really nice run today"
   },
   {
     "userId": 2,
     "distance": 4.20,
-    "time": 80000,
+    "time": 1500000,
     "runName": "evening run",
     "body":"cold out!"
   },
   {
     "userId": 1,
     "distance": 2.20,
-    "time": 5000,
+    "time": 700000,
     "runName": "afernoon run",
     "body":"really nice weather today"
   },
   {
     "userId": 2,
     "distance": 1.20,
-    "time": 5000,
+    "time": 500000,
     "runName": "short run",
     "body":"too tired!"
   },
   {
     "userId": 3,
     "distance": 6.20,
-    "time": 50000,
+    "time": 1860000,
     "runName": "long run",
     "body":"tired!"
+  },
+  {
+    "userId": 3,
+    "distance": 10.20,
+    "time": 3660000,
+    "runName": "Run with Milo",
+    "body":"Ran with the dog. Sorry buddy, if I have to, you have to too."
+  },
+  {
+    "userId": 1,
+    "distance": 8.30,
+    "time": 2460000,
+    "runName": "after work run",
+    "body":"geddit :p"
+  },
+  {
+    "userId": 2,
+    "distance": 4.90,
+    "time": 1160000,
+    "runName": "park run",
+    "body":"ran laps of the park, move walkers!"
+  },
+  {
+    "userId": 2,
+    "distance": 14.20,
+    "time": 3260000,
+    "runName": "long run",
+    "body":"shouldn't have eaten before I ran!"
   }
  
 ]

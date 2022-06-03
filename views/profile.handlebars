@@ -11,30 +11,28 @@
 {{/if}}
 
 <div>
-  <canvas id="personalChart"></canvas>
+  <canvas class="bg-white" id="personalChart"></canvas>
 </div>
 
+<div class="d-flex flex-row">
 {{#each posts as |post| }}
 <div class="box{{post.id}}" data-id="{{post.id}}" date-id="{{post.createdAt}}">
-  <div class="head">
-    <h4>
-      <a href="/post/edit/{{post.id}}">{{post.runName}}</a>
-    </h4>
+  <div class="p-2 head">
+    <h4><a href="/post/edit/{{post.id}}">{{post.runName}}</a></h4>
       <div id="aboutRun">
       <b>About</b>
       </br>{{post.body}}</div>
-
-       <div id="time{{post.id}}" data-id="{{post.time}}">{{millisToMinutesAndSeconds post.time}}min </div> 
-       <div id="distance{{post.id}}" data-id="{{post.distance}}"> <b>{{post.distance}}km</b> 
-    </div>
+       <div id="time{{post.id}}" data-id="{{post.time}}">{{millisToMinutesAndSeconds post.time}} seconds </div> 
+       <div id="distance{{post.id}}" data-id="{{post.distance}}"> <b>{{post.distance}} km</b></div>
   </div>
 </div>
 {{/each}}
-
+</div>
 <br>
-<button class="new-post">
-    <a href="/newpost"> + New Post </a>
-</button>
+<div class="new-post">
+    <a href="/newpost" class="btn"> + New Post </a>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./js/personalstats.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

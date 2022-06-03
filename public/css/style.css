@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  background-color: rgb(231, 227, 227);
+}
+.nav-item {
+  font-size: larger;
+}
+button {
+  font-size: 25px;
+}
+.no-button {
+  font-size: 25px;
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
+.btn {
+  margin-right: 10px;
+}
+
+.dashboard {
+  color:rgb(10, 54, 173);
+  text-decoration: solid;
+}
+
+.fitness {
+  text-decoration: solid;
+  font-size: 30px;
+}
+.new-post {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.container-edit {
+  background-color: yellow;
+}

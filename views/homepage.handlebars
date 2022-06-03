@@ -1,28 +1,27 @@
 <div>
-  <canvas id="distanceChart"></canvas>
+  <canvas class="bg-white" id="distanceChart"></canvas>
 </div>
 
+<div class="d-flex flex-row ">
 {{#each posts as |post| }}
-<div class="box{{post.id}}" data-id="{{post.id}}">
+<div class="p-2 box{{post.id}}" data-id="{{post.id}}">
   <div class="head">
-    <h4>
-      <a href="/post/{{post.id}}">{{post.runName}}</a>
-    </h2>
+    <h4><a href="/post/{{post.id}}">{{post.runName}}</a></h4>
     <p class="user{{post.id}}" data-id="{{post.user.userName}}">Posted by {{post.user.userName}} </p>
   </div>
   <div class="content{{post.id}}" data-id="{{post.distance}}">
-      <p>
       <div id="aboutRun">
       <b>About</b>
-      </br>{{post.body}}</div>
-
-       <div id="time">{{millisToMinutesAndSeconds post.time}}min </div> 
-       <div id="distance"> <b>{{post.distance}}km</b> </div>
+      </br>{{post.body}}
+       <div id="time">{{millisToMinutesAndSeconds post.time}} seconds </div> 
+       <div id="distance"> <b>{{post.distance}} km</b> </div>
        <div id="minPerKm"> <b>{{minPerKm  post.time post.distance }}min/km</b> </div>
-    </p>
+       </br>
   </div>
+</div>
 </div>
 {{/each}}
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./js/distancechart.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

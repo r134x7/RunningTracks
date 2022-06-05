@@ -52,7 +52,7 @@ if (time.length !== 0) {
 
   document.querySelector(
     "#totaltime"
-  ).textContent = `Total time: ${totalTimeInMinSec(totalTime)} minutes`;
+  ).textContent = `Total time: ${totalTimeInMinSec(totalTime)} seconds`;
 }
 
 if (postId.length !== 0) {

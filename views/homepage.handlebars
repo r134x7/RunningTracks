@@ -4,7 +4,7 @@
 
 <div class="d-flex flex-row ">
 {{#each posts as |post| }}
-<div class="p-2 box{{post.id}}" data-id="{{post.id}}">
+<div class="content-edit p-2 box{{post.id}}" data-id="{{post.id}}">
   <div class="head">
     <h4><a href="/post/{{post.id}}">{{post.runName}}</a></h4>
     <p class="user{{post.id}}" data-id="{{post.user.userName}}">Posted by {{post.user.userName}} </p>
@@ -21,6 +21,8 @@
 </div>
 </div>
 {{/each}}
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./js/distancechart.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

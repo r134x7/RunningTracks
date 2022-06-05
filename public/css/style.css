@@ -32,6 +32,13 @@ button {
   margin-bottom: 20px;
   font-size: 20px;
 }
-.container-edit {
-  background-color: yellow;
+.content-edit {
+  width: 140px;
+}
+.content-edit2 {
+  width: 140px;
+}
+
+.expDonut {
+size-adjust: 50px;
 }

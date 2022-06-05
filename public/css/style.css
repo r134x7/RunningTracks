@@ -44,3 +44,9 @@ button {
   flex-wrap: wrap;
   flex-direction: row;
 }
+
+.custombox {
+  border: lightslategrey;
+  border-style: groove;
+  border-radius: 5px;
+}

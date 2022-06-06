@@ -15,12 +15,6 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: "Super secret secret",
-  cookie: {
-    maxAge: 900000, // 15 minutes
-    httpOnly: false,
-    secure: true,
-    sameSite: "strict",
-  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

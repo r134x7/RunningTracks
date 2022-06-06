@@ -7,17 +7,23 @@
     <br>
     <span id="totaltime"></span>
     <br>
-    <span id="lastrun"></span>
   </h4>
+  <div>
+  <canvas id="expDonut"></canvas>
 </div>
+</div>
+    <br>
+    <span id="lastrun"></span>
+    <br>
 {{/if}}
 
 <div>
-  <canvas id="expDonut"></canvas>
+  <canvas class="bg-white" id="personalChart"></canvas>
 </div>
 
-<div>
-  <canvas class="bg-white" id="personalChart"></canvas>
+<br>
+<div class="new-post">
+    <a href="/newpost" class="btn"> + New Post </a>
 </div>
 
 <div class="d-flex flex-row">
@@ -35,10 +41,6 @@
   </div>
 </div>
 {{/each}}
-</div>
-<br>
-<div class="new-post">
-    <a href="/newpost" class="btn"> + New Post </a>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

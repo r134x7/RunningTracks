@@ -66,8 +66,6 @@ if (postId.length !== 0) {
 }
 
 for (let index = 0; index < postId.length; index++) {
-
-
   const test = {
     y: distance[index],
     // x: time[index],
@@ -97,16 +95,16 @@ let lineChart = new Chart(distanceChart, {
       y: {
         title: {
           display: true,
-          text: 'Distance in km'
+          text: "Distance in km",
         },
       },
-     x: {
+      x: {
         title: {
           display: true,
-          text: 'Time in seconds'
-        }
-      }
-    }
+          text: "Time in seconds",
+        },
+      },
+    },
   },
 });
 
@@ -115,18 +113,18 @@ const level = [];
 
 for (let index = 1; index < 100; index++) {
   if (index < 10) {
-    expBar.push(1 * index)
+    expBar.push(1 * index);
   } else if (index < 25) {
-    expBar.push(2 * index)
+    expBar.push(2 * index);
   } else if (index < 50) {
-    expBar.push(5 * index)
+    expBar.push(5 * index);
   } else if (index < 75) {
-    expBar.push(10 * index)
+    expBar.push(10 * index);
   } else if (index < 100) {
-    expBar.push(20 * index)
+    expBar.push(20 * index);
   }
 
-  level.push(`Level ${index}`)
+  level.push(`Level ${index}`);
 }
 
 var exp = 0;
@@ -134,11 +132,11 @@ var userLevel = `${level[0]}`;
 
 for (let index = 0; index < level.length; index++) {
   exp = exp + expBar[index];
-  
+
   if (totalDistance >= exp) {
     userLevel = `${level[index]}`;
   } else {
-    break
+    break;
   }
 }
 
@@ -146,13 +144,10 @@ for (let index = 0; index < level.length; index++) {
 // Earth's radius is 6378km
 // Earth's circumference is 40,075km
 
-document.querySelector(
-  "#currentlevel"
-).textContent = `You are at ${userLevel}`;
+document.querySelector("#currentlevel").textContent = `You are at ${userLevel}`;
 
 if (postId.length !== 0) {
- [lastDistance] = distance.slice(-1); // source: https://stackoverflow.com/questions/60409137/how-to-find-last-element-of-an-array-without-modifying-source-array-in-vanilla-j
-
+  [lastDistance] = distance.slice(-1); // source: https://stackoverflow.com/questions/60409137/how-to-find-last-element-of-an-array-without-modifying-source-array-in-vanilla-j
 }
 
 let donutChart = document.querySelector("#expDonut").getContext("2d");
@@ -161,22 +156,28 @@ let expChart = new Chart(donutChart, {
   type: "doughnut",
   data: {
     labels: [
-      `EXP cumulative before last run: ${(totalDistance-lastDistance).toFixed(2)}km`,
+      `EXP cumulative before last run: ${(totalDistance - lastDistance).toFixed(
+        2
+      )}km`,
       `EXP gained last run: ${lastDistance}km`,
-      `EXP remaining: ${(exp-totalDistance).toFixed(2)}km`
+      `EXP remaining: ${(exp - totalDistance).toFixed(2)}km`,
     ],
     datasets: [
       {
         label: "Exp Donut",
-        data: [totalDistance-lastDistance, lastDistance, exp-totalDistance],
+        data: [totalDistance - lastDistance, lastDistance, exp - totalDistance],
         backgroundColor: [
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)',
-          'rgb(255, 99, 132)'
+          "rgb(54, 162, 235)",
+          "rgb(255, 205, 86)",
+          "rgb(255, 99, 132)",
         ],
         borderWidth: 1,
         borderColor: "black",
       },
     ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
   },
 });

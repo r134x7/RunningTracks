@@ -16,9 +16,11 @@ This project is to build an application that can help user post information of t
 # User Story
 
 ```md
-AS A Runner Lover
-I WANT to create a blog based on running. 
-So that I can input my running data which is presented along with relevant statistics and shared with other users.
+AS A Running lover
+I WANT to track my running data easily and conveniently and share it with other users.
+I want my data presented in an interesting way along with other relevant statistics.
+I want to see the data of other users using the application.
+
 ```
 
 ## Acceptance Criteria
@@ -46,22 +48,24 @@ THEN I am represented a chart
 ## Screenshot
 This is a screenshot of the generated HTML webpage.
 
-![Team Generator HTML Webpage Screenshot]()
-
-## Walkthrough Video
-![Team Generator Walkthrough Video via google drive]()
+![RunningTracks application homepage](./assets/images/RunningTracks%20app%20screenshot.png)
 
 ## Credits
 - Bootstrap: https://getbootstrap.com/
 - NodeJS: https://nodejs.org/en/
-- Jest: https://www.npmjs.com/package/jest
-- Inquirer: https://www.npmjs.com/package/inquirer
-- MySql:
-- Chart:
-- 
+- MySql2:https://www.npmjs.com/package/mysql2
+- Charts.js: https://www.npmjs.com/package/chart.js
+- Bcrypt: https://www.npmjs.com/package/bcrypt
+- Sequelize: https://www.npmjs.com/package/sequelize
+- Express.js: https://www.npmjs.com/package/express
+- Express-handlebars: https://www.npmjs.com/package/express-handlebars
+- Express-session: https://www.npmjs.com/package/express-session
+- dotenv: https://www.npmjs.com/package/dotenv
+- connect-session-sequelize: https://www.npmjs.com/package/connect-session-sequelize
+ 
 
 ## Deployment
-![Deployed on Heroku](./assets/html-render-screenshot.png)
+[RunningTracks Deployed on Heroku](https://running-tracks.herokuapp.com/)
 
 ## License
 

@@ -1,8 +1,12 @@
-<div class="box">
+<h4>
+Viewing Post:
+</h4>
+
+<div class="box postview" >
   <div class="head">
     <h4>
-      <p>{{post.runName}}</p>
-    </h2>
+      {{post.runName}}
+    </h4>
     <p>Posted by {{post.user.userName}} </p>
   </div>
   <div class="content">
@@ -16,16 +20,21 @@
   </div>
 </div>
 
+<br>
+<h4>Comments:</h4>
+<br>
 
 {{#each post.comments as |comment|}}
-<div class="box">
+<div class="box postview">
   <div class="head">
   </div>
   <div class="content">
     <p> {{comment.commentBody}} </p>
-    <p> Name:{{comment.commentName}} </p>
+    <p> From:{{comment.commentName}} </p>
   </div>
 </div>
+
+<br>
 {{/each}}
 
 <div class="box">

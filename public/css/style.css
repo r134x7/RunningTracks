@@ -50,3 +50,9 @@ button {
   border-style: groove;
   border-radius: 5px;
 }
+
+.postview {
+  border: solid;
+  border-radius: 5px;
+  border-color: cornflowerblue;
+}

@@ -2,27 +2,35 @@
   <canvas class="bg-white" id="distanceChart"></canvas>
 </div>
 
+<br>
+
 <div class="d-flex flex-row ">
 {{#each posts as |post| }}
-<div class="content-edit p-2 box{{post.id}}" data-id="{{post.id}}">
-  <div class="head">
-    <h4><a href="/post/{{post.id}}">{{post.runName}}</a></h4>
-    <p class="user{{post.id}}" data-id="{{post.user.userName}}">Posted by {{post.user.userName}} </p>
+  <div class="content-edit p-2 box{{post.id}} custombox" data-id="{{post.id}}">
+    <div class="head">
+      <h4>
+      <a href="/post/{{post.id}}">{{post.runName}}</a>
+      </h4>
+      <p class="user{{post.id}}" data-id="{{post.user.userName}}"></p>
+    </div>
+    <div class="content{{post.id}}" data-id="{{post.distance}}">
+        <div id="aboutRun">
+          <b>Posted by {{post.user.userName}}: </b>
+          <br>
+          <p>{{post.body}}</p>
+          <div id="time">{{millisToMinutesAndSeconds post.time}} min:sec
+          </div> 
+          <div id="distance"> 
+            <b>{{post.distance}} km</b> 
+          </div>
+          <div id="minPerKm"> 
+            <b>{{minPerKm  post.time post.distance }}min/km</b> 
+          </div>
+        </div>
+    </div>
   </div>
-  <div class="content{{post.id}}" data-id="{{post.distance}}">
-      <div id="aboutRun">
-      <b>About</b>
-      </br>{{post.body}}
-       <div id="time">{{millisToMinutesAndSeconds post.time}} seconds </div> 
-       <div id="distance"> <b>{{post.distance}} km</b> </div>
-       <div id="minPerKm"> <b>{{minPerKm  post.time post.distance }}min/km</b> </div>
-       </br>
-  </div>
-</div>
-</div>
 {{/each}}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./js/distancechart.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

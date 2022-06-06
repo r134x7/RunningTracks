@@ -26,6 +26,8 @@ for (let index = 1; index < 1000; index++) {
     const getColour3 = Math.floor(Math.random() * 256);
 
     colour.push(`rgba(${getColour1}, ${getColour2}, ${getColour3}, 0.8)`);
+
+    document.querySelector(`.box${index}`).style.backgroundColor = `rgba(${getColour1}, ${getColour2}, ${getColour3}, 0.8)`;
   }
 }
 

@@ -10,7 +10,7 @@
   </h4>
   <div>
   <canvas id="expDonut"></canvas>
-</div>
+  </div>
 </div>
     <br>
     <span id="lastrun"></span>
@@ -28,21 +28,28 @@
 
 <div class="d-flex flex-row">
 {{#each posts as |post| }}
-<div class="box{{post.id}}" data-id="{{post.id}}" date-id="{{post.createdAt}}">
-  <div class="content-edit2 p-2 head">
-    <h4><a href="/post/edit/{{post.id}}">{{post.runName}}</a></h4>
-      <div id="aboutRun">
-      <b>About</b>
-      </br>{{post.body}}</br>
-       <div id="time{{post.id}}" data-id="{{post.time}}">{{millisToMinutesAndSeconds post.time}}min </div> 
-       <div id="distance{{post.id}}" data-id="{{post.distance}}"> <b>{{post.distance}}km</b> </div>
-       <div id="minPerKm"> <b>{{minPerKm  post.time post.distance }}min/km</b> </div>
-      </div>
+  <div class="content-edit2 p-2 box{{post.id}} custombox" data-id="{{post.id}}" date-id="{{post.createdAt}}">
+    <div class="head">
+        <h4>
+        <a href="/post/edit/{{post.id}}">{{post.runName}}</a>
+        </h4>
+    </div>
+        <div id="aboutRun">
+        <b>Posted:</b>
+        <br>
+        <p>{{post.body}}</p>
+          <div id="time{{post.id}}" data-id="{{post.time}}">{{millisToMinutesAndSeconds post.time}} min:sec
+          </div> 
+          <div id="distance{{post.id}}" data-id="{{post.distance}}"> 
+           <b>{{post.distance}}km</b> 
+          </div>
+          <div id="minPerKm"> 
+            <b>{{minPerKm  post.time post.distance }}min/km</b>
+          </div>
+    </div>
   </div>
-</div>
 {{/each}}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./js/personalstats.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">

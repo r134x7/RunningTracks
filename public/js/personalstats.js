@@ -61,7 +61,7 @@ if (time.length !== 0) {
 
   document.querySelector(
     "#totaltime"
-  ).textContent = `Total time: ${totalTimeInMinSec(totalTime)} seconds`; // puts the total time to the page
+  ).textContent = `Total time: ${totalTimeInMinSec(totalTime)} min:sec`; // puts the total time to the page
 }
 
 if (postId.length !== 0) {

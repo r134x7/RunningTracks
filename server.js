@@ -11,16 +11,15 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({ helpers }); // for date format
-//const hbs = exphbs.create({}); // for date format
+const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: "Super secret secret",
   cookie: {
-    // maxAge: 900000,
-    // httpOnly: false,
-    // secure: true,
-    // sameSite: 'strict',
+    maxAge: 900000, // 15 minutes
+    httpOnly: false,
+    secure: true,
+    sameSite: "strict",
   },
   resave: false,
   saveUninitialized: true,

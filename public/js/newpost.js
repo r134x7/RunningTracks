@@ -1,15 +1,14 @@
-// taken from 14-MVC/28-Stu_Mini-Project/public/js/profile.js
-
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const runName = document.querySelector("#post-runName").value.trim();
-  const body = document.querySelector("#post-body").value.trim();
+  const runName = document.querySelector("#post-runName").value.trim(); // gets title of post
+  const body = document.querySelector("#post-body").value.trim(); // gets content of post
 
-  const timeMin = document.querySelector("#post-min").value.trim();
-  const timeSec = document.querySelector("#post-sec").value.trim();
+  const timeMin = document.querySelector("#post-min").value.trim(); // gets time in minutes
+  const timeSec = document.querySelector("#post-sec").value.trim(); // gets time in seconds
 
   function timeToMs(timeMin, timeSec) {
+    // function to convert time to milliseconds
     const secToMs = timeSec * 1000;
     const minToMs = timeMin * 60000;
     console.log(secToMs, minToMs);
@@ -18,9 +17,10 @@ const newFormHandler = async (event) => {
 
   const time = timeToMs(timeMin, timeSec);
 
-  const distance = document.querySelector("#post-distance").value.trim();
+  const distance = document.querySelector("#post-distance").value.trim(); // gets distance given
 
   if (runName && body && time && distance) {
+    // POST request to create a post
     const response = await fetch(`/api/posts`, {
       method: "POST",
       body: JSON.stringify({ runName, body, time, distance }),

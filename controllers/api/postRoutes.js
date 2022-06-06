@@ -21,7 +21,7 @@ router.put("/:id", withAuth, async (req, res) => {
       {
         runName: req.body.runName,
         body: req.body.body,
-        time: req.body.time + 1000,
+        time: req.body.time,
         distance: req.body.distance,
       },
       {

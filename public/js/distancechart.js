@@ -5,17 +5,21 @@ const colour = [];
 const xyCoordinates = [];
 
 for (let index = 1; index < 1000; index++) {
+  // break isn't used due to posts that can be deleted
   // gets postId and pushes the container's data to the arrays used
   const getPostId = document.querySelector(`.box${index}`);
 
   if (getPostId !== null) {
+    // gets post id number
     postId.push(document.querySelector(`.box${index}`).getAttribute("data-id"));
 
     const getUserName = userName.push(
+      // gets username
       document.querySelector(`.user${index}`).getAttribute("data-id")
     );
 
     const getdistance = distance.push(
+      // gets distance data of post
       document.querySelector(`.content${index}`).getAttribute("data-id")
     );
     // generating random rgba colours
@@ -23,9 +27,12 @@ for (let index = 1; index < 1000; index++) {
     const getColour2 = Math.floor(Math.random() * 256);
     const getColour3 = Math.floor(Math.random() * 256);
 
-    colour.push(`rgba(${getColour1}, ${getColour2}, ${getColour3}, 0.8)`);
-    
-    document.querySelector(`.box${index}`).style.backgroundColor = `rgba(${getColour1}, ${getColour2}, ${getColour3}, 0.8)`;
+    colour.push(`rgba(${getColour1}, ${getColour2}, ${getColour3}, 0.8)`); // graph data is associated with a colour
+
+    // related post is associated with the same colour
+    document.querySelector(
+      `.box${index}`
+    ).style.backgroundColor = `rgba(${getColour1}, ${getColour2}, ${getColour3}, 0.8)`;
   }
 }
 
@@ -50,8 +57,8 @@ let barChart = new Chart(distanceChart, {
       {
         axis: "y",
         label: "Distance in km by posted run",
-        data: xyCoordinates,
-        backgroundColor: colour,
+        data: xyCoordinates, // using array
+        backgroundColor: colour, // using array
         borderWidth: 1,
         borderColor: "black",
       },

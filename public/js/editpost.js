@@ -1,18 +1,17 @@
-// taken from 14-MVC/28-Stu_Mini-Project/public/js/profile.js
-
 const editFormHandler = async (event) => {
   event.preventDefault();
 
-  const postId = event.target.getAttribute("data-id");
+  const postId = event.target.getAttribute("data-id"); // gets post id
 
-  const runName = document.querySelector("#post-runName").value.trim();
-  const body = document.querySelector("#post-body").value.trim();
-  const distance = document.querySelector("#post-distance").value.trim();
+  const runName = document.querySelector("#post-runName").value.trim(); // gets title of post
+  const body = document.querySelector("#post-body").value.trim(); // gets content of post
+  const distance = document.querySelector("#post-distance").value.trim(); // gets distance
 
-  const timeMin = document.querySelector("#post-min").value.trim();
-  const timeSec = document.querySelector("#post-sec").value.trim();
+  const timeMin = document.querySelector("#post-min").value.trim(); // gets time in minutes
+  const timeSec = document.querySelector("#post-sec").value.trim(); // gets time in seconds
 
   function timeToMs(timeMin, timeSec) {
+    // converts the time given into milliseconds
     const secToMs = timeSec * 1000;
     const minToMs = timeMin * 60000;
     console.log(secToMs, minToMs);
@@ -22,6 +21,7 @@ const editFormHandler = async (event) => {
   const time = timeToMs(timeMin, timeSec);
 
   if (runName && body && time && distance) {
+    // makes the post request
     const response = await fetch(`/api/posts/${postId}`, {
       method: "PUT",
       body: JSON.stringify({ runName, body, time, distance }),
@@ -33,15 +33,16 @@ const editFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/profile");
     } else {
-      alert("Failed to create post");
+      alert("Failed to edit post");
     }
   }
 };
 
 const delButtonHandler = async (event) => {
-  const postId = event.target.getAttribute("data-id");
+  const postId = event.target.getAttribute("data-id"); // gets post id
 
   const response = await fetch(`/api/posts/${postId}`, {
+    // request to delete post
     method: "DELETE",
   });
 

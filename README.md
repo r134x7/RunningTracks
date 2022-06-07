@@ -1,4 +1,4 @@
-# Project-2: Runner Tracker
+# RunningTracks
 ## Description
 
 This project is to build an application that can help user post information of their runs day to day. User not only post the information but also can post comments and view chart to see their achievement and compare to their goal.

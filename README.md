@@ -65,10 +65,10 @@ This is a screenshot of the generated HTML webpage.
  
 
 ## Deployment
-[RunningTracks Deployed on Heroku](https://running-tracks.herokuapp.com/)
+[RunningTracks Deployed on Heroku](https://quiet-reaches-87273.herokuapp.com/)
 
 ## License
 
 This project is using MIT license.
 
-Copy right @ 2022 Xuan Huy Bui - R134x7 - Nicols - Vicky
+Copy right @ 2022 Xuan Huy Bui - r134x7 - Nicols - Vicky

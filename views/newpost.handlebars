@@ -5,21 +5,21 @@
     <form class="form post-form">
       <div class="form-group">
         <label>Run Name:</label>
-        <input class="form-input" type="text" id="post-runName" value="{{post.runName}}" />
+        <input class="form-input" type="text" id="post-runName" placeholder="e.g. Nice Run" value="{{post.runName}}" />
       </div>
       <div class="form-group">
         <label>Content:</label>
-        <input class="form-input" type="text" id="post-body" value="{{post.body}}" />
+        <input class="form-input" type="text" id="post-body" placeholder="Where you ran, how you feel." value="{{post.body}}" />
       </div>
       <div class="form-group">
         <label>Time:</label>
-        <input class="form-input" type="text" id="post-min" placeholder="minutes" />
-        <input class="form-input" type="text" id="post-sec" placeholder="seconds" />
+        <input class="form-input" type="text" id="post-min" placeholder="Input Minutes" />
+        <input class="form-input" type="text" id="post-sec" placeholder="Input Seconds" />
 
       </div>
       <div class="form-group">
         <label>Distance:</label>
-        <input class="form-input" type="text" id="post-distance" value="{{post.distance}}" />
+        <input class="form-input" type="text" id="post-distance" placeholder="Input km - e.g. 1.5" value="{{post.distance}}" />
       </div>
       <div class="form-group">
         <button class="btn btn-primary" type="submit">Create</button>

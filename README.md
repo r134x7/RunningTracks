@@ -1,7 +1,7 @@
 # RunningTracks
 ## Description
 
-This project is to build an application that can help user post information of their runs day to day. User not only post the information but also can post comments and view chart to see their achievement and compare to their goal.
+This is a full-stack application with the MVC model where Handlebars is used for the view, MySQL is used for the model with Sequelize as the ORM and Express is used as the controller for routing all the CRUD operations. The app takes in data input from users who are fitness runners and displays their data in bar charts. Users who post their runs can have other users comment on the runs.
 
 ## Table of Contents
 

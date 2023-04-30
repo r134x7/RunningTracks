@@ -65,7 +65,7 @@ This is a screenshot of the generated HTML webpage.
  
 
 ## Deployment
-[RunningTracks Deployed on Heroku](https://quiet-reaches-87273.herokuapp.com/)
+This app is no longer hosted on Heroku.
 
 ## License
 
